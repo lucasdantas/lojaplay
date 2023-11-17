@@ -1,0 +1,11 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h1>Pedido ${pedido.id}</h1>
+<ul>
+	#{list items:pedido.itens, as:'i'}
+		<li>${i}</li>
+	#{/list}
+</ul>
+
+<a href="@{Pedidos.form}">Novo pedido</a>

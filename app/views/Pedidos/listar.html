@@ -1,0 +1,10 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<ul>
+	#{list items:pedidos, as:'p'}
+		<li>${p} <a href="@{Pedidos.detalhar(p.id)}">Detalhar</a></li> 
+	#{/list}
+</ul>
+
+<a href="@{Pedidos.salvar}">Finalizar pedido</a>

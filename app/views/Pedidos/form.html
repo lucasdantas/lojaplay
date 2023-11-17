@@ -1,0 +1,20 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h1>Itens:</h1>
+<ul>
+	#{list items:itens, as:'i'}
+		<li>${i} <a href="@{Pedidos.addItem(i.id)}">Adicionar</a></li>
+	#{/list}
+</ul>
+
+
+<h1>Adicionados:</h1>
+<ul>
+	#{list items:itensCarrinho, as:'i'}
+		<li>${i} <a href="#">Remover</a></li>
+	#{/list}
+</ul>
+
+
+<a href="@{Pedidos.salvar}">Finalizar pedido</a>
