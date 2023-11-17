@@ -1,0 +1,24 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h1>Departamento ${d.nome}</h1>
+Vendedores:
+<ul>
+	#{list items:d.vendedores, as:'v'}
+		<li>${v.nome}</li>
+	#{/list}
+</ul>
+
+<hr />
+<h2>Adicionar vendedor</h2>
+<form action="@{Departamentos.addVendedor}">
+
+	<input type="hidden" name="id" value=${d.id}>
+	<select name="idVendedor">
+		#{list items:vendedores, as:'v'}
+			<option value="${v.id}">${v.nome}</option>
+		#{/list}
+	</select>
+	<input type="submit" value="Adicionar" />
+
+</form>
